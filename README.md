@@ -1,5 +1,9 @@
 # AntarikXplorer: <br/> Venture Beyond The Stars
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d458f9d2-b910-4a6b-9c57-e970566313de" alt="AntarikXplorer">
+</div>
+
 ## [📝 Click to view Medium Blog](https://medium.com/@daspriyosmita2003/antarikxplorer-6dfa7ad0ff4b)
 
 ## 🚀 Idea Brief
@@ -31,6 +35,8 @@ virtual realm.
 - <b>Gamified Learning with Quizzes & Rewards:</b> Interactive quizzes and rewards make learning fun, competitive, and engaging.
 - <b>Personalized Learning:</b> Adaptive quizzes adjust to your knowledge and interests for a tailored learning experience.
 - <b>Collaborative Colonization Challenges:</b> A unique exoplanet colonization feature allows users to face real-world challenges in collaborative or competitive gameplay.
+
+
 ## 🔥 Unique Selling Proposition:
 - <b>Real-Time Scientific Accuracy:</b> Access authentic exoplanetary environments and data sourced directly from NASA, ensuring a genuine exploration experience.
 - <b>Dual Experience Modes:</b> Enjoy both immersive VR and accessible gyro mode, making advanced space exploration available to all users.
