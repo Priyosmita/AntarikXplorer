@@ -49,6 +49,32 @@ virtual realm.
 - <b>Gyro Mode for Non-VR Users:</b> A gyro-based mode for those without VR equipment, ensuring accessibility without compromising the immersive experience.
 - <b>Extrasolar Insights:</b> Access real-time data and detailed information on exoplanets, directly pulled from NASA’s data API.
 - <b>Quizzes & Rewards:</b> Engage in educational quizzes where scores can be converted into redeemable rewards, creating an interactive learning experience.
+## Mock Diagrams
+<div align="center">
+  <figure>
+    <img src="https://github.com/user-attachments/assets/c307130f-13d7-4dbe-9821-31495e1f4842" alt="AIkya ss">
+    <figcaption>AntarikXplore’s Landing Page</figcaption>
+  </figure>
+</div><br/>
+<div align="center">
+  <figure>
+    <img src="https://github.com/user-attachments/assets/7b33235d-ef02-4bd9-8c2d-f810f28653da">
+    <figcaption>AntarikXplore’s VR Page</figcaption>
+  </figure>
+</div><br/>
+<div align="center">
+  <figure>
+    <img src="https://github.com/user-attachments/assets/f39367e4-2316-41c0-a7e7-f0b6a8e7af27" alt="AIkya smart match">
+    <figcaption>AntarikXplore’s Quizzes Page</figcaption>
+  </figure>
+</div><br/>
+<div align="center">
+  <figure>
+    <img src="https://github.com/user-attachments/assets/d78f1384-09cb-431d-a7d0-b25c2f246868">
+    <figcaption>AntarikXplore’s Simulation Page</figcaption>
+  </figure>
+</div>
+
 ## 🔥 Business Model for AntarikXplorer:
 - <b>Collaborations and Partnerships:</b> Partner with science and tech exhibitions, planetariums, and space-related events to feature AntarikXplorer as an interactive exhibit. Offer immersive booths with upsells to premium content and exclusive event challenges.
 - <b>Educational Licensing:</b> License AntarikXplorer to schools, universities, and STEM programs, providing custom space exploration modules and quizzes, generating revenue through educational partnerships.
