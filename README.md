@@ -36,9 +36,14 @@ With scientifically accurate environments powered by NASA’s real-time exoplane
 - <b>Personalized Learning:</b> Adaptive quizzes adjust to your knowledge and interests for a tailored learning experience.
 
 ## 🌠 Process Flow Diagram
+- Users can experience and explore simulations of Exoplanetary Environments and Spacecraft Piloting and Navigation, built using Unreal Engine 5 and Blender, with full support for STEAM VR API integration.
+- Gain access to Extrasolar Insights, a user-friendly feature that retrieves real-time data from NASA’s API, offering detailed information on exoplanets.
+- Participate in Scored Quizzes, with quiz results securely stored in a database for tracking performance.
+- Quiz scores can be converted into Rewards, which users can Redeem. All reward data will be stored in a database for easy management and retrieval.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/3e8f6af9-4c37-4ce9-bd3e-6da66034fe3b" alt="AntarikXplorer Process Flow Diagram">
 </div>
+
 
 ## ⚙️ Tech Stack
 - Frontend:<br/> <img src="https://www.datocms-assets.com/98835/1684410508-image-7.png" alt="nextjs" width="50" height="50"/> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="50" height="50"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="50" height="50"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="50" height="50"/> <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="javascript" width="40" height="40"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="50" height="50"/> 
