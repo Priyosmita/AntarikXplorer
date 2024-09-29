@@ -1,14 +1,17 @@
-import React from "react";
 import Button from "../global/button_gradient";
-import "./landing.css"
+import "./landing.css";
+import Image from "next/image";
+
 const CallToAction = () => {
   return (
     <div className="relative min-h-screen">
       {/* Background image */}
-      <img
+      <Image
         src="/landing-page-assets/landing_cta.png"
         className="absolute inset-0 w-full h-full object-cover"
         alt="Background"
+        width={1920}
+        height={1080}
       />
 
       {/* Overlay content */}
