@@ -1,4 +1,3 @@
-"use server"
 import Image from "next/image";
 import CallToAction from "./components/landing/calltoaction";
 import Header from "./components/global/header";
@@ -6,15 +5,16 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 
 export default async function Home() {
   const options = [
-    { label: 'Home', link: '#' },
+    { label: 'Home', link: '/' },
     { label: 'Simulation', link: '#' },
-    { label: 'Quizzes', link: '#' },
+    { label: 'Quizzes', link: '/quizzes' },
     { label: 'About', link: '#' },
   ];
+
   return (
     <>
       <Header
-        logo={<img src="/global-assets/logo.png" alt="Logo" className="h-8" />}
+        logo={<Image src="/global-assets/logo.png" alt="Logo" className="h-10 object-contain" width={200} height={100} />}
         options={options}
         name="Antariksxplorer"
         catchPhrase="Beyond the stars"
