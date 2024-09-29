@@ -11,11 +11,8 @@ const CallToAction = () => {
         alt="Background"
       />
 
-      {/* Dark Overlay for Better Text Visibility */}
-      {/* <div className="absolute inset-0 bg-black opacity-30"></div> */}
-
       {/* Overlay content */}
-      <div className="relative z-10 flex flex-col justify-center h-full pl-12 text-left text-white pt-40">
+      <div className="relative z-10 flex flex-col justify-center h-full pl-12 text-left text-white pt-32">
         {/* Main Text */}
         <h1
           className="text-8xl  mb-4 viga-regular"
