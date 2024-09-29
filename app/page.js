@@ -2,6 +2,7 @@ import Image from "next/image";
 import CallToAction from "./components/landing/calltoaction";
 import Header from "./components/global/header";
 import { MdOutlineAccountCircle } from "react-icons/md";
+import Footer from "./components/global/footer";
 
 export default async function Home() {
   const options = [
@@ -21,7 +22,8 @@ export default async function Home() {
         accountIcon={<MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />}
       />
       <CallToAction />
-      <p>kbwrkjwvrrwkjvnlkw</p>
+      <Footer/>
+      
     </>
   );
 }
