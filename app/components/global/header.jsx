@@ -33,7 +33,7 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
     >
       <div className="flex justify-between items-center p-4 mt-4">
         {/* Logo and text on the left */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center -space-x-8">
           {/* Logo */}
           <div className="logo object-contain">{logo}</div>
 

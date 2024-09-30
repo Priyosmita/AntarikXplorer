@@ -6,9 +6,9 @@ import Button from "../components/global/button_gradient";
 const Page = () => {
   const options = [
     { label: "Home", link: "/" },
-    { label: "Simulation", link: "#" },
+    { label: "Simulation", link: "/simulation" },
     { label: "Quizzes", link: "/quizzes" },
-    { label: "About", link: "#" },
+    { label: "About", link: "/about" },
   ];
 
   return (

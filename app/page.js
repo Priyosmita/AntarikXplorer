@@ -6,10 +6,10 @@ import Footer from "./components/global/footer";
 
 export default async function Home() {
   const options = [
-    { label: 'Home', link: '/' },
-    { label: 'Simulation', link: '#' },
-    { label: 'Quizzes', link: '/quizzes' },
-    { label: 'About', link: '#' },
+    { label: "Home", link: "/" },
+    { label: "Simulation", link: "/simulation" },
+    { label: "Quizzes", link: "/quizzes" },
+    { label: "About", link: "/about" },
   ];
 
   return (
@@ -22,8 +22,8 @@ export default async function Home() {
         accountIcon={<MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />}
       />
       <CallToAction />
-      <Footer/>
-      
+      <Footer />
+
     </>
   );
 }
