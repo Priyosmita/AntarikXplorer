@@ -9,6 +9,7 @@ const Page = () => {
     { label: "Simulation", link: "/simulation" },
     { label: "Quizzes", link: "/quizzes" },
     { label: "About", link: "/about" },
+    { label: "Insights", link: "/insights" },
   ];
 
   return (
