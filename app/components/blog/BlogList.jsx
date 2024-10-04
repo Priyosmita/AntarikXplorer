@@ -89,7 +89,7 @@ const BlogList = () => {
           />
         }
         options={options}
-        name="Antariksxplorer"
+        name="AntarikXplorer"
         catchPhrase="Beyond the stars"
         accountIcon={
           <MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />

@@ -1,13 +1,24 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { Client, Databases, Query } from 'appwrite';  // Import Query from appwrite
+import { Client, Databases, Query } from 'appwrite';
 import { useParams } from 'react-router-dom';
+import Header from '../global/header';
+import { MdOutlineAccountCircle } from "react-icons/md";
+import Image from 'next/image';
 
 const BlogDetail = () => {
-  const { slug } = useParams();  // Retrieve slug from URL
+  const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const options = [
+    { label: "Home", link: "/" },
+    { label: "Simulation", link: "/simulation" },
+    { label: "Quizzes", link: "/quizzes" },
+    { label: "About", link: "/about" },
+    { label: "Insights", link: "/insights" },
+  ];
 
   useEffect(() => {
     const client = new Client()
@@ -16,13 +27,12 @@ const BlogDetail = () => {
 
     const databases = new Databases(client);
 
-    // Fetch the blog based on the slug
     const fetchBlog = async () => {
       try {
         const response = await databases.listDocuments(
-          '66fa5b7f002eb395a138',  // Database ID
-          '66fa5b93001687e95345',  // Collection ID
-          [Query.equal('slug', slug)]  // Proper way to query by slug
+          '66fa5b7f002eb395a138', // Database ID
+          '66fa5b93001687e95345', // Collection ID
+          [Query.equal('slug', slug)]  // Query by slug
         );
         if (response.documents.length > 0) {
           setBlog(response.documents[0]);
@@ -40,19 +50,85 @@ const BlogDetail = () => {
   }, [slug]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p className="text-center mt-20 text-gray-500">Loading...</p>;
   }
 
   if (!blog) {
-    return <p>Blog not found</p>;
+    return <p className="text-center mt-20 text-gray-500">Blog not found</p>;
   }
 
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
-      {blog.image && <img src={blog.image} alt={blog.title} className="w-full h-60 object-cover mb-4" />}
-      <p className="text-lg">{blog.body}</p>
-    </div>
+    <>
+      {/* Header Component */}
+      <Header
+        logo={
+          <Image
+            src="/global-assets/logo.png"
+            alt="Logo"
+            className="h-10 object-contain"
+            width={200}
+            height={100}
+          />
+        }
+        options={options}
+        name="AntarikXplorer"
+        catchPhrase="Beyond the stars"
+        accountIcon={
+          <MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />
+        }
+      />
+      <div
+        className="w-full min-h-screen bg-cover bg-center bg-no-repeat pt-10"
+        style={{
+          backgroundImage:
+            "url('https://w0.peakpx.com/wallpaper/164/343/HD-wallpaper-sci-fi-black-hole-kurzgesagt-minimalist.jpg')",
+        }}
+      >
+        {/* Add a semi-transparent overlay to improve text readability */}
+        <div className="bg-black bg-opacity-60 w-full h-full">
+          <div className="container mx-auto py-12 px-40">
+            {/* Blog Title */}
+            <h1 className="text-5xl font-bold leading-tight text-white mb-4 text-center">
+              {blog.title}
+            </h1>
+
+            {/* Author and Views */}
+            <div className="flex justify-center items-center mb-8 text-gray-300 text-sm">
+              <span className="mr-4">By {blog.author}</span>
+              <span>{blog.views} views</span>
+            </div>
+
+            {/* Blog Hero Image */}
+            {blog.image && (
+              <div className="w-full h-96 mb-8">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
+              </div>
+            )}
+
+            {/* Blog Body */}
+            <div className="prose lg:prose-xl mx-auto text-gray-200 leading-relaxed">
+              <p>{blog.body}</p>
+            </div>
+
+            {/* Footer (Author and Additional Info) */}
+            <div className="border-t border-gray-500 mt-12 pt-6 flex justify-between items-center">
+              <div className="text-gray-300">
+                <span className="block">
+                  Written by <strong>{blog.author}</strong>
+                </span>
+              </div>
+              <div className="text-gray-300">
+                <span>{blog.views} views</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
