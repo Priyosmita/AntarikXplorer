@@ -33,7 +33,7 @@ const Quiz = ({ questions }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/questions/submit",
+        "https://ant.buckets.growsoc.arpan.xyz/questions/submit",
         { questions: questionsWithSelectedOptions }
       );
       if (response.status === 200) {

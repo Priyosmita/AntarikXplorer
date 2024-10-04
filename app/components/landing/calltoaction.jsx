@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const CallToAction = () => {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Background image */}
       <Image
-        src="/landing-page-assets/landing_cta.png"
+        src="/landing-page-assets/landing_bg-min.png"
         className="absolute inset-0 w-full h-full object-cover"
         alt="Background"
         width={1920}
@@ -44,6 +44,17 @@ const CallToAction = () => {
 
         {/* Button */}
         <Button className="w-80">Launch your Virtual Journey</Button>
+      </div>
+
+      {/* Astronaut Image */}
+      <div className="astronaut-container">
+        <Image
+          src="/landing-page-assets/landing_astro1.png" // Replace with your astronaut image path
+          alt="Astronaut"
+          width={1200}
+          height={1200}
+          className="astronaut"
+        />
       </div>
     </div>
   );
