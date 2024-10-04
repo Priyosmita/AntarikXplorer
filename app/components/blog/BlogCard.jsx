@@ -1,7 +1,6 @@
 // BlogCard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../global"
 
 const BlogCard = ({ image, title, MetaDescription, slug }) => {
   return (
