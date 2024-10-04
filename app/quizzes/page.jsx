@@ -2,6 +2,7 @@ import { MdOutlineAccountCircle } from "react-icons/md";
 import Header from "../components/global/header";
 import Image from "next/image";
 import Button from "../components/global/button_gradient";
+import Link from "next/link";
 
 const Page = () => {
   const options = [
@@ -57,7 +58,9 @@ const Page = () => {
               with your expertise.
             </p>
 
-            <Button className="w-80">Go to Quizzes</Button>
+            <Button className="w-80">
+              <Link href="/quizzes/easy">Go to Quizzes</Link>
+            </Button>
           </div>
           <div className="w-2/5">
             <h1
@@ -78,6 +81,8 @@ const Page = () => {
           </div>
         </div>
       </div>
+
+      <div></div>
     </div>
   );
 };
