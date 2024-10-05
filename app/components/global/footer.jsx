@@ -13,12 +13,12 @@ const Footer = () => {
             <Image
               src="/global-assets/logo.png"
               className="h-10 object-contain"
-              alt="AntariksXplorer"
+              alt="AntarikXplorer"
               width={200}
               height={100}
             />
             <span className="text-xl whitespace-nowrap dark:text-white">
-              AntariksXplorer
+              AntarikXplorer
             </span>
           </a>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
@@ -48,7 +48,7 @@ const Footer = () => {
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2024{" "}
           <a href="/" className="hover:underline">
-            Antariksxplorer
+            AntarikXplorer
           </a>
           . All Rights Reserved.
         </span>

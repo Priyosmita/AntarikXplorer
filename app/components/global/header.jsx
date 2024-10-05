@@ -71,7 +71,9 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
         </nav>
 
         {/* Account Icon on the right */}
-        <div className="account-icon">{accountIcon}</div>
+        <Link href="/login" className="account-icon">
+          {accountIcon}
+        </Link>
       </div>
     </header>
   );

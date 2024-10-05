@@ -1,8 +1,11 @@
+"use client";
+
 import { MdOutlineAccountCircle } from "react-icons/md";
 import Header from "../components/global/header";
 import Image from "next/image";
 import Button from "../components/global/button_gradient";
 import Link from "next/link";
+import { useState } from "react";
 
 const Page = () => {
   const options = [
@@ -12,6 +15,8 @@ const Page = () => {
     { label: "About", link: "/about" },
     { label: "Insights", link: "/insights" },
   ];
+
+  const [qStep, setQStep] = useState(0);
 
   return (
     <div>
@@ -57,9 +62,44 @@ const Page = () => {
               Test your space science skills with adaptive quizzes that grow
               with your expertise.
             </p>
+            <Button
+              className={`w-80 ${qStep == 1 ? "hidden" : ""}`}
+              onClick={() => setQStep(1)}
+            >
+              <span>Go to Quizzes</span>
+            </Button>
+            <div className="flex gap-2">
+              <Link
+                href="/quizzes/easy"
+                className={`button_gradient text-white text-lg py-2 px-6 w-80 rounded-full ${
+                  qStep == 0 ? "hidden" : ""
+                }`}
+              >
+                Easy
+              </Link>
+              <Link
+                href="/quizzes/medium"
+                className={`button_gradient text-white text-lg py-2 px-6 w-80 rounded-full ${
+                  qStep == 0 ? "hidden" : ""
+                }`}
+              >
+                Medium
+              </Link>
+              <Link
+                href="/quizzes/hard"
+                className={`button_gradient text-white text-lg py-2 px-6 w-80 rounded-full ${
+                  qStep == 0 ? "hidden" : ""
+                }`}
+              >
+                Hard
+              </Link>
+            </div>
 
-            <Button className="w-80">
-              <Link href="/quizzes/easy">Go to Quizzes</Link>
+            <Button
+              className={`w-80 mt-4 ${qStep == 0 ? "hidden" : ""}`}
+              onClick={() => setQStep(0)}
+            >
+              <span>Back</span>
             </Button>
           </div>
           <div className="w-2/5">
@@ -77,12 +117,12 @@ const Page = () => {
               as you advance.
             </p>
 
-            <Button className="w-80">Redeem Rewards</Button>
+            <Button className="w-80">
+              <Link href="/login">Redeem Rewards</Link>
+            </Button>
           </div>
         </div>
       </div>
-
-      <div></div>
     </div>
   );
 };

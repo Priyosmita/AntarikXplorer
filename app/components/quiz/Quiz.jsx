@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+export const dynamic = "force-dynamic";
+
 const Quiz = ({ questions }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));

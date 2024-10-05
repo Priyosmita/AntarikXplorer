@@ -1,6 +1,9 @@
+"use client";
+import Link from "next/link";
 import Button from "../global/button_gradient";
 import "./landing.css";
 import Image from "next/image";
+import { Typewriter } from "react-simple-typewriter";
 
 const CallToAction = () => {
   return (
@@ -21,7 +24,16 @@ const CallToAction = () => {
           className="text-8xl  mb-4 viga-regular"
           style={{ textShadow: "4px 4px 10px rgba(0, 0, 0, 0.7)" }}
         >
-          Venture Beyond the <br /> Stars
+          Venture Beyond the <br />
+          <Typewriter
+            words={["Stars", "Solar System", "Universe", "Galaxy"]}
+            loop={false}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={3000}
+          />
         </h1>
         <p
           className="text-2xl font-semibold mb-6 opacity-85"
@@ -32,7 +44,7 @@ const CallToAction = () => {
 
         {/* Sub-text */}
         <p
-          className="text-sm max-w-md mb-8 font-light opacity-80"
+          className="text-base max-w-md mb-8 font-light opacity-80"
           style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.5)" }}
         >
           Embark on Antarikxplorer’s VR and Gyro immersive experience and
@@ -43,7 +55,9 @@ const CallToAction = () => {
         </p>
 
         {/* Button */}
-        <Button className="w-80">Launch your Virtual Journey</Button>
+        <Button className="w-80">
+          <Link href="/simulation">Launch your Virtual Journey</Link>
+        </Button>
       </div>
 
       {/* Astronaut Image */}

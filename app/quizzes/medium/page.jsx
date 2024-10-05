@@ -1,12 +1,24 @@
+"use client";
 import Quiz from "@/app/components/quiz/Quiz";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
-const Page = async () => {
-  let { data } = await axios.get("https://ant.buckets.growsoc.arpan.xyz/questions/medium");
+const Page = () => {
+  const [allData, setAllData] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let { data } = await axios.get(
+        "https://ant.buckets.growsoc.arpan.xyz/questions/medium"
+      );
+      setAllData(data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
-      <Quiz questions={data} />
+      <Quiz questions={allData} />
     </div>
   );
 };
