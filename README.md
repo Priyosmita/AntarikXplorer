@@ -5,6 +5,7 @@
 </div>
 
 ## [📝 Click to view Medium Blog](https://medium.com/@daspriyosmita2003/antarikxplorer-6dfa7ad0ff4b)
+## [📝 Click to download simulation file](https://priyosmita.itch.io/antarikxplorer)
 
 (pronounced: “Antariksh Explorer”, where “Antariksh” is the sanskrit term for cosmos)<br/>
 
