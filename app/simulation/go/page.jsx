@@ -1,15 +1,9 @@
-"use client";
-import Footer from "@/app/components/global/footer";
-import Header from "@/app/components/global/header";
-import Quiz from "@/app/components/quiz/Quiz";
-import axios from "axios";
+import React from "react";
+import Header from "../../components/global/header";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import { MdOutlineAccountCircle } from "react-icons/md";
 
 const Page = () => {
-  const [allData, setAllData] = useState({});
-
   const options = [
     { label: "Home", link: "/" },
     { label: "Simulation", link: "/simulation" },
@@ -17,18 +11,16 @@ const Page = () => {
     { label: "Insights", link: "/insights" },
   ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      let { data } = await axios.get(
-        "https://ant.buckets.growsoc.arpan.xyz/questions/medium"
-      );
-      setAllData(data);
-    };
-    fetchData();
-  }, []);
-
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url('/landing-page-assets/about_bg.png')`, // Replace with the actual path
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh", // Adjust this to fit your needs
+        width: "100vw",
+      }}
+    >
       <Header
         logo={
           <Image
@@ -46,8 +38,6 @@ const Page = () => {
           <MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />
         }
       />
-      <Quiz questions={allData} />
-      <Footer />
     </div>
   );
 };

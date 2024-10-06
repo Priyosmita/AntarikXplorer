@@ -12,7 +12,6 @@ const Page = () => {
     { label: "Home", link: "/" },
     { label: "Simulation", link: "/simulation" },
     { label: "Quizzes", link: "/quizzes" },
-    { label: "About", link: "/about" },
     { label: "Insights", link: "/insights" },
   ];
 
