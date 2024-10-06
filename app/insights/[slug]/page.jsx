@@ -112,6 +112,9 @@ const BlogDetail = ({ params: { slug } }) => {
             {/* Blog Body */}
             <div className="prose lg:prose-xl mx-auto text-gray-200 leading-relaxed">
               <p>{blog.body}</p>
+              <p>{blog.body1}</p>
+              <p>{blog.body2}</p>
+              <p>{blog.body3}</p>
             </div>
 
             {/* Footer (Author and Additional Info) */}
