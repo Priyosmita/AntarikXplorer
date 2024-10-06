@@ -12,10 +12,13 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://ant.buckets.growsoc.arpan.xyz/login",
+        {
+          email,
+          pass: password,
+        }
+      );
 
       if (response.status === 200) {
         router.push("/account");

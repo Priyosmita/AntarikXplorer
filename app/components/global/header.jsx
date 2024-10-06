@@ -25,13 +25,6 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
     };
   }, []);
 
-  const handleOptionClick = (option) => {
-    // If the clicked option is Insights, force a reload
-    if (option.label === "Insights") {
-      window.location.href = option.link; // This will reload the page
-    }
-  };
-
   return (
     <header
       className={`fixed w-full top-0 left-0 transition-transform duration-500 ease-in-out ${
@@ -63,7 +56,6 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
                 key={index}
                 href={option.link}
                 className="text-white text-md hover:text-indigo-300 transition-colors duration-300 opacity-90"
-                onClick={() => handleOptionClick(option)} // Add the onClick handler here
               >
                 {option.label}
               </Link>

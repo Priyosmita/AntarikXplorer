@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { Client, Databases, Query } from 'appwrite';
-import { useParams } from 'react-router-dom';
-import Header from '../global/header';
+import { useEffect, useState } from "react";
+import { Client, Databases, Query } from "appwrite";
+import Header from "@/app/components/global/header";
 import { MdOutlineAccountCircle } from "react-icons/md";
-import Image from 'next/image';
+import Image from "next/image";
 
-const BlogDetail = () => {
-  const { slug } = useParams();
+const BlogDetail = ({ params: { slug } }) => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -22,26 +20,26 @@ const BlogDetail = () => {
 
   useEffect(() => {
     const client = new Client()
-      .setEndpoint('https://cloud.appwrite.io/v1') // Your Appwrite Endpoint
-      .setProject('66fa5a740004419aed12'); // Your project ID
+      .setEndpoint("https://cloud.appwrite.io/v1") // Your Appwrite Endpoint
+      .setProject("66fa5a740004419aed12"); // Your project ID
 
     const databases = new Databases(client);
 
     const fetchBlog = async () => {
       try {
         const response = await databases.listDocuments(
-          '66fa5b7f002eb395a138', // Database ID
-          '66fa5b93001687e95345', // Collection ID
-          [Query.equal('slug', slug)]  // Query by slug
+          "66fa5b7f002eb395a138", // Database ID
+          "66fa5b93001687e95345", // Collection ID
+          [Query.equal("slug", slug)] // Query by slug
         );
         if (response.documents.length > 0) {
           setBlog(response.documents[0]);
         } else {
-          console.error('Blog not found');
+          console.error("Blog not found");
         }
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching blog:', error);
+        console.error("Error fetching blog:", error);
         setLoading(false);
       }
     };
@@ -101,10 +99,12 @@ const BlogDetail = () => {
             {/* Blog Hero Image */}
             {blog.image && (
               <div className="w-full h-96 mb-8">
-                <img
+                <Image
                   src={blog.image}
                   alt={blog.title}
                   className="w-full h-full object-cover rounded-lg shadow-lg"
+                  width={800}
+                  height={500}
                 />
               </div>
             )}

@@ -1,21 +1,28 @@
-// BlogCard.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import "../global/global_components.css"
+import Link from "next/link";
+import Image from "next/image";
+import "@/app/components/global/global_components.css";
 
 const BlogCard = ({ image, title, MetaDescription, slug }) => {
   return (
-    <div className="max-w-sm bg-gray-800 bg-opacity-30  rounded-lg shadow">
-      <Link to={`/insights/${slug}`}>
-        <img className="rounded-t-lg w-full h-40 object-cover" src={image} alt={title} />
+    <div className="max-w-sm bg-gray-800 bg-opacity-40 rounded-lg shadow">
+      <Link href={`/insights/${slug}`}>
+        <Image
+          className="rounded-t-lg w-full h-40 object-cover"
+          src={image}
+          alt={title}
+          width={600}
+          height={400}
+        />
       </Link>
       <div className="p-5">
-        <Link to={`/insights/${slug}`}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{title}</h5>
+        <Link href={`/insights/${slug}`}>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
+            {title}
+          </h5>
         </Link>
         <p className="mb-3 font-normal text-gray-200">{MetaDescription}</p>
         <Link
-          to={`/insights/${slug}`}
+          href={`/insights/${slug}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-full button_gradient"
         >
           Read more
