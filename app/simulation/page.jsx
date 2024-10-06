@@ -3,6 +3,7 @@ import Header from "../components/global/header";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import Footer from "../components/global/footer";
 import Link from "next/link";
+import Button from "../components/global/button_gradient";
 
 const Page = () => {
   const options = [
@@ -33,7 +34,7 @@ const Page = () => {
         }
       />
 
-      <Link href="/simulation/go" className="relative block pt-24 z-10">
+      <Link href="https://priyosmita.itch.io/antarikxplorer" className="relative block pt-24 z-10">
         <h2
           className="text-8xl viga-regular text-center py-4"
           style={{ textShadow: "4px 4px 10px rgba(0, 0, 0, 0.7)" }}
@@ -56,6 +57,10 @@ const Page = () => {
               atmospheres, gravity, and weather. Experience extreme conditions
               from gas giants to rocky worlds in real-time.
             </p>
+            <Button>
+              <Link href="https://priyosmita.itch.io/antarikxplorer"> Go to game </Link>
+            </Button>
+
           </div>
         </div>
 
