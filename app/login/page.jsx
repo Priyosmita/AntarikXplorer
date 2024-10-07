@@ -3,11 +3,21 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Link from "next/link";
+import Header from "../components/global/header";
+import { MdOutlineAccountCircle } from "react-icons/md";
+import Image from "next/image";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+
+  const options = [
+    { label: "Home", link: "/" },
+    { label: "Simulation", link: "/simulation" },
+    { label: "Quizzes", link: "/quizzes" },
+    { label: "Insights", link: "/insights" },
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,12 +42,37 @@ const Page = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <>
+      <Header
+        logo={
+          <Image
+            src="/global-assets/logo.png"
+            alt="Logo"
+            className="h-10 object-contain"
+            width={200}
+            height={100}
+          />
+        }
+        options={options}
+        name="AntarikXplorer"
+        catchPhrase="Beyond the stars"
+        accountIcon={
+          <MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />
+        }
+      />
+    <div
+      className="flex items-center justify-center min-h-screen"
+      style={{
+        backgroundImage: `url('https://wallpapers.com/images/hd/4k-space-glowing-ring-es4tss2e6i1dzfj6.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <form
         onSubmit={handleSubmit}
-        className="bg-amber-100 p-6 rounded shadow-md w-full max-w-sm"
+        className="bg-white bg-opacity-40 p-6 rounded shadow-md w-full max-w-sm"
       >
-        <h2 className="text-2xl font-bold mb-4 text-purple-900">Login</h2>
+        <h2 className="text-2xl font-bold mb-4 text-purple-900 text-center">Login</h2>
         <div className="mb-4">
           <label htmlFor="email" className="block text-purple-900">
             Email ID:
@@ -74,12 +109,13 @@ const Page = () => {
         </button>
         <p className="mt-4 text-center text-purple-900">
           Don{`'`}t have an account?{" "}
-          <Link href="/signup" className="text-pink-500 hover:underline">
+          <Link href="/signup" className="text-purple-900 hover:underline">
             Sign up
           </Link>
         </p>
       </form>
-    </div>
+      </div>
+      </>
   );
 };
 
