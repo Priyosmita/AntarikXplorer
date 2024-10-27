@@ -15,15 +15,24 @@ export default async function Home() {
   return (
     <>
       <Header
-        logo={<Image src="/global-assets/logo.png" alt="Logo" className="h-10 object-contain" width={200} height={100} />}
+        logo={
+          <Image
+            src="/global-assets/logo.png"
+            alt="Logo"
+            className="h-10 object-contain"
+            width={200}
+            height={100}
+          />
+        }
         options={options}
         name="AntarikXplorer"
         catchPhrase="Beyond the stars"
-        accountIcon={<MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />}
+        accountIcon={
+          <MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />
+        }
       />
       <CallToAction />
       <Footer />
-
     </>
   );
 }

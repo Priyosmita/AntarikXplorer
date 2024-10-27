@@ -2,7 +2,7 @@
 import Footer from "@/app/components/global/footer";
 import Header from "@/app/components/global/header";
 import Quiz from "@/app/components/quiz/Quiz";
-import axios from "axios";
+import server from "@/app/lib/server";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { MdOutlineAccountCircle } from "react-icons/md";
@@ -19,9 +19,7 @@ const Page = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let { data } = await axios.get(
-        "https://ant.buckets.growsoc.arpan.xyz/questions/medium"
-      );
+      let { data } = await server.get("/questions/medium");
       setAllData(data);
     };
     fetchData();
