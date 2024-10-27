@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { MdOutlineAccountCircle } from "react-icons/md";
 
-const Page = () => {
+const Page = ({ params: { slug } }) => {
   const [allData, setAllData] = useState({});
 
   const options = [
@@ -19,11 +19,12 @@ const Page = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let { data } = await server.get("/questions/hard");
+      let { data } = await server.get(`/questions/${slug}`);
       setAllData(data);
     };
+
     fetchData();
-  }, []);
+  }, [slug]);
 
   return (
     <div>
@@ -44,8 +45,8 @@ const Page = () => {
           <MdOutlineAccountCircle className="text-white text-4xl hover:text-indigo-300 transition-colors duration-300" />
         }
       />
-      <Quiz questions={allData} />
-      <Footer />
+      <Quiz questions={allData} slug={slug} />
+      {/* <Footer /> */}
     </div>
   );
 };
