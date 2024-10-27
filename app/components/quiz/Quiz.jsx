@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import axios from "axios";
+import server from "@/app/lib/server";
 
 export const dynamic = "force-dynamic";
 
@@ -34,10 +34,9 @@ const Quiz = ({ questions }) => {
     }));
 
     try {
-      const response = await axios.post(
-        "https://ant.buckets.growsoc.arpan.xyz/questions/submit",
-        { questions: questionsWithSelectedOptions }
-      );
+      const response = await server.post("/questions/submit", {
+        questions: questionsWithSelectedOptions,
+      });
       if (response.status === 200) {
         // Handle successful submission
         console.log("Quiz submitted successfully");
