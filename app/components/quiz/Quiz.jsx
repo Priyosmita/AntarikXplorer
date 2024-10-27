@@ -66,34 +66,36 @@ const Quiz = ({ questions = [{}], slug = "" }) => {
       : [];
 
   return (
-    <div className="pt-40 h-[83dvh] flex flex-col lg:flex-row gap-4 bg-no-repeat bg-[url('https://images.pexels.com/photos/12491661/pexels-photo-12491661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-opacity-30">
-      <div className="bg-black bg-opacity-60 w-1/2 p-4 lg:p-8">
-        <h4 className="text-4xl font-bold text-white text-center">
-          AntarikXplorer Quiz
-        </h4>
-        <p className="text-center">
-          Questions: {questions?.length ?? 0} | Level: {slug?.toUpperCase()}
-        </p>
-        <div>
-          {/* display a list of questions */}
-          <ul className="questions-list mt-4 space-y-2">
-            {onlyQuestions &&
-              onlyQuestions?.map((question, index) => (
-                <li
-                  key={index}
-                  className={`question-item p-2 rounded cursor-pointer ${
-                    currentQuestionIndex === index
-                      ? "bg-purple-800"
-                      : "bg-purple-500 hover:bg-purple-600"
-                  }`}
-                  onClick={() => setCurrentQuestionIndex(index)}
-                >
-                  {index + 1}. {question}
-                </li>
-              ))}
-          </ul>
-        </div>
-      </div>
+    <div className="pt-40 min-h-screen flex flex-col lg:flex-row gap-4 bg-no-repeat bg-[url('https://images.pexels.com/photos/12491661/pexels-photo-12491661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-opacity-30">
+      <div className="bg-transparent w-1/2 p-4 lg:p-8 overflow-y-hidden max-h-[60vh]">
+  <h4 className="text-4xl font-bold text-white text-center">
+    AntarikXplorer Quiz
+  </h4>
+  <p className="text-center">
+    Questions: {questions?.length ?? 0} | Level: {slug?.toUpperCase()}
+  </p>
+  <div>
+    {/* Display a list of questions with controlled overflow */}
+    <ul className="questions-list mt-4 space-y-2 max-h-[50vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-purple-700 scrollbar-track-purple-200">
+      {onlyQuestions &&
+        onlyQuestions?.map((question, index) => (
+          <li
+            key={index}
+            className={`question-item p-2 rounded cursor-pointer ${
+              currentQuestionIndex === index
+                ? "bg-purple-800"
+                : "bg-purple-500 hover:bg-purple-600"
+            }`}
+            onClick={() => setCurrentQuestionIndex(index)}
+          >
+            {index + 1}. {question}
+          </li>
+        ))}
+    </ul>
+  </div>
+</div>
+
+
       <div className="my-auto quiz-container p-4 max-w-xl w-1/2 mx-auto bg-gradient-to-r from-purple-600 to-indigo-900 shadow-md rounded-lg text-white">
         <div className="progress-bar bg-gray-300 h-2 rounded mb-4">
           <div
