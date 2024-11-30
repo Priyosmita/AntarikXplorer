@@ -4,8 +4,9 @@
   <img src="https://github.com/user-attachments/assets/cf1cba18-4dff-46b8-a3b1-ebee44bd391a" alt="AntarikXplorer">
 </div>
 
+## [🌐 Click to Visit AntarikXplorer](https://antarik-xplorer.vercel.app/)
 ## [📝 Click to view Medium Blog](https://medium.com/@daspriyosmita2003/antarikxplorer-6dfa7ad0ff4b)
-## [📝 Click to download simulation file](https://priyosmita.itch.io/antarikxplorer)
+## [🎮 Click to download simulation file](https://priyosmita.itch.io/antarikxplorer)
 
 (pronounced: “Antariksh Explorer”, where “Antariksh” is the sanskrit term for cosmos)<br/>
 
