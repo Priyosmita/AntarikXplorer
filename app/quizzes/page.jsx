@@ -6,6 +6,7 @@ import Image from "next/image";
 import Button from "../components/global/button_gradient";
 import Link from "next/link";
 import { useState } from "react";
+import Footer from "../components/global/footer";
 
 const Page = () => {
   const options = [
@@ -116,12 +117,13 @@ const Page = () => {
               as you advance.
             </p>
 
-            <Button className="w-80">
-              <Link href="/login">Redeem Rewards</Link>
+            <Button className="w-80 cursor-default">
+              <p>Coming Soon</p>
             </Button>
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

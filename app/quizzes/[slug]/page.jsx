@@ -46,7 +46,7 @@ const Page = ({ params: { slug } }) => {
         }
       />
       <Quiz questions={allData} slug={slug} />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
