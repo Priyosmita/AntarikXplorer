@@ -19,16 +19,16 @@ const BlogDetail = ({ params: { slug } }) => {
 
   useEffect(() => {
     const client = new Client()
-      .setEndpoint("https://cloud.appwrite.io/v1") // Your Appwrite Endpoint
-      .setProject("66fa5a740004419aed12"); // Your project ID
+      .setEndpoint("https://fra.cloud.appwrite.io/v1") // Your Appwrite Endpoint
+      .setProject("6851551f0037d6ae5a24"); // Your project ID
 
     const databases = new Databases(client);
 
     const fetchBlog = async () => {
       try {
         const response = await databases.listDocuments(
-          "66fa5b7f002eb395a138", // Database ID
-          "66fa5b93001687e95345", // Collection ID
+          "685155b70033251a9e02", // Database ID
+          "685162f5003969a2ed9b", // Collection ID
           [Query.equal("slug", slug)] // Query by slug
         );
         if (response.documents.length > 0) {
@@ -89,11 +89,11 @@ const BlogDetail = ({ params: { slug } }) => {
               {blog.title}
             </h1>
 
-            {/* Author and Views */}
+            {/* Author and Views
             <div className="flex justify-center items-center mb-8 text-gray-300 text-sm">
               <span className="mr-4">By {blog.author}</span>
               <span>{blog.views} views</span>
-            </div>
+            </div> */}
 
             {/* Blog Hero Image */}
             {blog.image && (
@@ -111,12 +111,12 @@ const BlogDetail = ({ params: { slug } }) => {
             {/* Blog Body */}
             <div className="prose lg:prose-xl mx-auto text-gray-200 leading-relaxed">
               <p>{blog.body}</p>
-              <p>{blog.body1}</p>
+              {/* <p>{blog.body1}</p>
               <p>{blog.body2}</p>
-              <p>{blog.body3}</p>
+              <p>{blog.body3}</p> */}
             </div>
 
-            {/* Footer (Author and Additional Info) */}
+            {/* Footer (Author and Additional Info)
             <div className="border-t border-gray-500 mt-12 pt-6 flex justify-between items-center">
               <div className="text-gray-300">
                 <span className="block">
@@ -126,7 +126,7 @@ const BlogDetail = ({ params: { slug } }) => {
               <div className="text-gray-300">
                 <span>{blog.views} views</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

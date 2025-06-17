@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import "@/app/components/global/global_components.css";
 
-const BlogCard = ({ image, title, MetaDescription, slug }) => {
+const BlogCard = ({ image, title, description, slug }) => {
   return (
     <div className="max-w-sm bg-gray-800 bg-opacity-40 rounded-lg shadow">
       <Link href={`/insights/${slug}`}>
@@ -20,7 +20,7 @@ const BlogCard = ({ image, title, MetaDescription, slug }) => {
             {title}
           </h5>
         </Link>
-        <p className="mb-3 font-normal text-gray-200">{MetaDescription}</p>
+        <p className="mb-3 font-normal text-gray-200">{description}</p>
         <Link
           href={`/insights/${slug}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-full button_gradient"

@@ -55,8 +55,8 @@ const BlogList = () => {
       const titleMatches =
         blog.title && blog.title.toLowerCase().includes(query);
       const descriptionMatches =
-        blog.metaDescription &&
-        blog.metaDescription.toLowerCase().includes(query);
+        blog.description &&
+        blog.description.toLowerCase().includes(query);
       return titleMatches || descriptionMatches;
     });
 
@@ -146,7 +146,7 @@ const BlogList = () => {
                     key={blog.$id}
                     image={blog.image}
                     title={blog.title}
-                    MetaDescription={blog.MetaDescription}
+                    description={blog.description}
                     slug={blog.slug}
                   />
                 ))}
