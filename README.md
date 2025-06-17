@@ -52,7 +52,7 @@ With scientifically accurate environments powered by NASA’s real-time exoplane
 - Backend:<br/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="50" height="50"/>
 - Database: <br/> <img src="https://appwrite.io/assets/logomark/logo.png" alt="appwrite" width="35" height="30"/> 
 - AI and Procedural Generation:<br/> <img src="https://canada1.discourse-cdn.com/flex004/uploads/convai/original/2X/b/b288507c6abec0ab8369f8d0e15d465296a91e63.png" alt="convai" width="90" height="30"/> 
-- Authentication: <br/> <img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="clerk" width="30" height="30"/>
+- Authentication: <br/> <img src="https://brandlogos.net/wp-content/uploads/2025/03/firebase_icon-logo_brandlogos.net_tcvck.png" alt="firebase" width="25" height="30"/>
 - Deployment: <br/> <img src="https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/revision/latest?cb=20221026155821" alt="vercel" width="40" height="40"/> 
 
 ## 💸 Business Model
