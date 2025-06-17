@@ -6,11 +6,14 @@ import Header from "../components/global/header";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import Image from "next/image";
 import Button from "../components/global/button_gradient";
-import server from "@/app/lib/server";
+import { auth } from "@/lib/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // toggle state
   const router = useRouter();
 
   const options = [
@@ -23,20 +26,13 @@ const Page = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await server.post("/login", {
-        email,
-        pass: password,
-      });
-
-      if (response.status === 200) {
-        alert("Login successful");
-        router.push("/");
-      } else {
-        // Handle error response
-        console.error("Login failed");
-      }
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      alert("Login successful");
+      router.push("/");
     } catch (error) {
-      console.error("An error occurred:", error);
+      console.error("Login failed:", error.message);
+      alert("Login failed. Please check your credentials.");
     }
   };
 
@@ -90,38 +86,47 @@ const Page = () => {
 
                         <form onSubmit={handleSubmit}>
                           <p className="mb-4">Please login to your account</p>
+
                           <label>Email:</label>
                           <input
                             type="email"
-                            label="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Please enter your email"
                             className="mb-4 w-full p-2 text-black rounded-md"
+                            required
                           />
 
                           <label>Password:</label>
-                          <input
-                            type="password"
-                            label="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Please enter your password"
-                            className="mb-4 w-full p-2 text-black rounded-md"
-                          />
+                          <div className="relative mb-4">
+                            <input
+                              type={showPassword ? "text" : "password"}
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
+                              placeholder="Please enter your password"
+                              className="w-full p-2 text-black rounded-md pr-10"
+                              required
+                            />
+                            <span
+                              onClick={() => setShowPassword(!showPassword)}
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-indigo-600 cursor-pointer"
+                            >
+                              {showPassword ? (
+                                <FaEye className="text-2xl" />
+                              ) : (
+                                <FaEyeSlash className="text-2xl" />
+                              )}
+                            </span>
+                          </div>
 
                           <div className="mb-12 pb-1 pt-1 text-center">
-                            <Button type="submit" className={`w-full`}>
+                            <Button type="submit" className="w-full">
                               Login
                             </Button>
-
-                            {/* <a href="#!">Forgot password?</a> */}
                           </div>
 
                           <div className="flex items-center justify-between pb-6">
-                            <p className="mb-0 mr-2">
-                              Don&apos;t have an account?
-                            </p>
+                            <p className="mb-0 mr-2">Don&apos;t have an account?</p>
                             <Button>
                               <Link
                                 href="/signup"

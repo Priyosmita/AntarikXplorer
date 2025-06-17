@@ -1,18 +1,22 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
 import Link from "next/link";
 import Header from "../components/global/header";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import Image from "next/image";
 import Button from "../components/global/button_gradient";
-import server from "@/app/lib/server";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { FaEye,FaEyeSlash  } from "react-icons/fa";
 
 const Page = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const router = useRouter();
 
   const options = [
@@ -24,22 +28,23 @@ const Page = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
     try {
-      const response = await server.post("/account", {
-        name,
-        email,
-        pass: password,
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, {
+        displayName: name,
       });
 
-      if (response.status === 200) {
-        alert("Login successful");
-        router.push("/");
-      } else {
-        // Handle error response
-        console.error("Signup failed");
-      }
+      alert("Account created successfully!");
+      router.push("/login");
     } catch (error) {
-      console.error("An error occurred:", error);
+      console.error("Signup error:", error.message);
+      alert("Signup failed: " + error.message);
     }
   };
 
@@ -74,7 +79,7 @@ const Page = () => {
           <div className="container h-full p-8">
             <div className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
               <div className="w-full">
-                <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+                <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800 mt-20">
                   <div className="g-0 lg:flex lg:flex-wrap">
                     <div className="px-4 md:px-0 lg:w-6/12">
                       <div className="md:mx-6 md:p-12">
@@ -97,32 +102,64 @@ const Page = () => {
                           <label>Username:</label>
                           <input
                             type="text"
-                            label="Name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Please enter your name"
                             className="mb-4 w-full p-2 text-black rounded-md"
+                            required
                           />
 
                           <label>Email:</label>
                           <input
                             type="email"
-                            label="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Please enter your email"
                             className="mb-4 w-full p-2 text-black rounded-md"
+                            required
                           />
 
                           <label>Password:</label>
-                          <input
-                            type="password"
-                            label="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Please enter your password"
-                            className="mb-4 w-full p-2 text-black rounded-md"
-                          />
+                          <div className="relative mb-4">
+                            <input
+                              type={showPassword ? "text" : "password"}
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
+                              placeholder="Please enter your password"
+                              className="w-full p-2 text-black rounded-md pr-10"
+                              required
+                            />
+                            <span
+                              onClick={() => setShowPassword(!showPassword)}
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-indigo-600 cursor-pointer"
+                            >
+                              {showPassword ? <FaEye className="text-2xl"/> : <FaEyeSlash className="text-2xl"/>}
+                            </span>
+                          </div>
+
+                          <label>Confirm Password:</label>
+                          <div className="relative mb-4">
+                            <input
+                              type={showConfirmPassword ? "text" : "password"}
+                              value={confirmPassword}
+                              onChange={(e) => setConfirmPassword(e.target.value)}
+                              placeholder="Re-enter your password"
+                              className={`w-full p-2 rounded-md pr-10 text-black ${
+                                confirmPassword && password !== confirmPassword
+                                  ? "border-4 border-red-600"
+                                  : ""
+                              }`}
+                              required
+                            />
+                            <span
+                              onClick={() =>
+                                setShowConfirmPassword(!showConfirmPassword)
+                              }
+                              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-indigo-600 cursor-pointer"
+                            >
+                              {showConfirmPassword ? <FaEye className="text-2xl"/> : <FaEyeSlash className="text-xl"/>}
+                            </span>
+                          </div>
 
                           <div className="mb-12 pb-1 pt-1 text-center">
                             <Button type="submit" className={`w-full`}>
