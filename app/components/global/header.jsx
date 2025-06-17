@@ -1,16 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../landing/landing.css";
 import Link from "next/link";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import { useRouter } from "next/navigation";
 
 const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [user, setUser] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const router = useRouter();
 
-  // Scroll effect to hide/show header
+  // Header hide/show on scroll
   useEffect(() => {
     let lastScrollY = 0;
 
@@ -24,12 +28,10 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Firebase auth listener
+  // Auth state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -38,6 +40,24 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
     return () => unsubscribe();
   }, []);
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Logout
+  const handleLogout = async () => {
+    await signOut(auth);
+    setDropdownOpen(false);
+    router.push("/");
+  };
+
   return (
     <header
       className={`fixed w-full top-0 left-0 transition-transform duration-500 ease-in-out ${
@@ -45,7 +65,7 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
       } bg-transparent z-50`}
     >
       <div className="flex justify-between items-center p-4 mt-4">
-        {/* Logo and text on the left */}
+        {/* Left: Logo + Text */}
         <div className="flex items-center -space-x-8">
           <div className="logo object-contain">{logo}</div>
           <div className="flex flex-col">
@@ -58,7 +78,7 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
           </div>
         </div>
 
-        {/* Navigation options */}
+        {/* Center: Nav Links */}
         <nav className="flex justify-center flex-grow space-x-8">
           {options &&
             options.map((option, index) => (
@@ -72,21 +92,31 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
             ))}
         </nav>
 
-        {/* Account info or login */}
-        <div className="flex items-center space-x-2 text-white">
+        {/* Right: Profile Icon & Dropdown */}
+        <div className="relative" ref={dropdownRef}>
           {user ? (
-            <>
+            <div className="flex items-center space-x-2 text-white cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>
               <span className="text-sm opacity-85">
                 {user.displayName || user.email}
               </span>
-              <Link href="/profile" className="account-icon">
-                {accountIcon}
-              </Link>
-            </>
+              <div className="account-icon">{accountIcon}</div>
+            </div>
           ) : (
-            <Link href="/login" className="account-icon">
+            <Link href="/login" className="account-icon text-white">
               {accountIcon}
             </Link>
+          )}
+
+          {/* Dropdown */}
+          {dropdownOpen && user && (
+            <div className="absolute right-0 mt-2 w-28 text-center button_gradient text-black rounded-md shadow-lg z-50 hover:scale-105 transition transform duration-300">
+              <button
+                onClick={handleLogout}
+                className="w-full text-center px-4 py-2 hover:text-white rounded-md"
+              >
+                Sign Out
+              </button>
+            </div>
           )}
         </div>
       </div>
