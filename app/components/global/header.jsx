@@ -3,10 +3,14 @@
 import { useState, useEffect } from "react";
 import "../landing/landing.css";
 import Link from "next/link";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/lib/firebase";
 
 const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [user, setUser] = useState(null);
 
+  // Scroll effect to hide/show header
   useEffect(() => {
     let lastScrollY = 0;
 
@@ -25,6 +29,15 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
     };
   }, []);
 
+  // Firebase auth listener
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <header
       className={`fixed w-full top-0 left-0 transition-transform duration-500 ease-in-out ${
@@ -34,10 +47,7 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
       <div className="flex justify-between items-center p-4 mt-4">
         {/* Logo and text on the left */}
         <div className="flex items-center -space-x-8">
-          {/* Logo */}
           <div className="logo object-contain">{logo}</div>
-
-          {/* Name and catchphrase */}
           <div className="flex flex-col">
             <span className="text-white text-md viga-regular tracking-widest font-thin opacity-85">
               {name}
@@ -48,7 +58,7 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
           </div>
         </div>
 
-        {/* Options in the center */}
+        {/* Navigation options */}
         <nav className="flex justify-center flex-grow space-x-8">
           {options &&
             options.map((option, index) => (
@@ -62,10 +72,23 @@ const Header = ({ logo, name, catchPhrase, options, accountIcon }) => {
             ))}
         </nav>
 
-        {/* Account Icon on the right */}
-        <Link href="/login" className="account-icon">
-          {accountIcon}
-        </Link>
+        {/* Account info or login */}
+        <div className="flex items-center space-x-2 text-white">
+          {user ? (
+            <>
+              <span className="text-sm opacity-85">
+                {user.displayName || user.email}
+              </span>
+              <Link href="/profile" className="account-icon">
+                {accountIcon}
+              </Link>
+            </>
+          ) : (
+            <Link href="/login" className="account-icon">
+              {accountIcon}
+            </Link>
+          )}
+        </div>
       </div>
     </header>
   );
