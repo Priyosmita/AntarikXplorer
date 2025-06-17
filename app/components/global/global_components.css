@@ -1,0 +1,14 @@
+.button_gradient {
+    background: linear-gradient(63deg, rgba(126, 90, 203, 1) 0%, rgba(63, 45, 101, 1) 100%);
+    transition: transform 0.3s ease, background 0.5s ease;  /* Smooth scaling and background transition */
+  }
+  
+  .button_gradient:hover {
+    transform: scale(1.05);  
+    background: linear-gradient(-63deg, rgba(63, 45, 101, 1) 0%, rgba(126, 90, 203, 1) 100%);
+  }
+  .footer_gradient {
+    background: rgb(45,48,101);
+background: radial-gradient(circle, rgba(45,48,101,1) 12%, rgba(23,6,60,1) 100%);
+  }
+  

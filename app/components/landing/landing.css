@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+
+.viga-regular {
+  font-family: "Viga", sans-serif;
+  /* font-weight: 100;
+    font-style: normal; */
+  }
+
+ /* Ensure the astronaut container is positioned correctly */
+.astronaut-container {
+  position: absolute;
+  bottom: 0px; /* Adjust to place it just above where the footer starts */
+  right: 4rem; /* Position it on the right side */
+  z-index: 20; /* Ensure it's above the background and other elements */
+  animation: emergeFromBottom 2s ease-out forwards; /* Animation */
+}
+
+/* Keyframe animation for the astronaut to rise from bottom to its final position */
+@keyframes emergeFromBottom {
+  0% {
+    transform: translateY(100%); /* Start from below */
+    opacity: 0; /* Initially invisible */
+  }
+  50% {
+    opacity: 1; /* Fade in during animation */
+  }
+  100% {
+    transform: translateY(0); /* End at its normal position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Optional: Adjust how the astronaut looks once it's settled */
+.astronaut {
+  width: 700px; /* Make the astronaut bigger */
+  height: auto;
+  transition: transform 0.5s ease-in-out; /* Smooth hover effect */
+}
+
+.astronaut:hover {
+  transform: rotate(0deg) scale(1.05); /* Slight hover effect */
+}

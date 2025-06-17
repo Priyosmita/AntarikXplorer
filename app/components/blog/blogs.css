@@ -1,0 +1,12 @@
+.scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #8b5cf6; /* Thumb color (violet-500) */
+    border-radius: 9999px; /* Fully rounded thumb */
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background-color: #d1d5db; /* Track color (gray-300) */
+    border-radius: 9999px; /* Fully rounded track */
+  }

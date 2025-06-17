@@ -1,0 +1,29 @@
+{
+  "name": "antarikxplorer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "appwrite": "^15.0.0",
+    "axios": "^1.7.7",
+    "framer-motion": "^11.11.10",
+    "next": "14.2.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.27.0",
+    "react-simple-typewriter": "^5.0.1",
+    "tailwind-scrollbar": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.13",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.14"
+  }
+}
