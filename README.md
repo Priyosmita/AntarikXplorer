@@ -26,7 +26,7 @@ With scientifically accurate environments powered by NASA’s real-time exoplane
 
 ## 🛠 System Architecture
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/37fb95d4-3d8a-42d4-af46-0cbe22b6f23d" alt="AntarikXplorer System Architecture">
+  <img src="https://github.com/user-attachments/assets/a5d63a56-0836-4007-a724-8254b686f5b7" alt="AntarikXplorer System Architecture">
 </div>
 
 ## 🌟 AntarikXplore’s Uniqueness
@@ -49,13 +49,11 @@ With scientifically accurate environments powered by NASA’s real-time exoplane
 
 ## ⚙️ Tech Stack
 - Frontend:<br/> <img src="https://www.datocms-assets.com/98835/1684410508-image-7.png" alt="nextjs" width="30" height="30"/> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="30" height="30"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="30" height="30"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="30" height="30"/> <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="javascript" width="30" height="30"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="30" height="30"/> 
-- Backend:<br/> <img src="https://github.com/user-attachments/assets/6dfc1b6d-ca9c-4492-969d-0a8343aceb7d" alt="flask" width="70" height="50"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="50" height="50"/> <img src="https://user-images.githubusercontent.com/8939680/57233884-20344080-6fe5-11e9-8df3-0df1282e1574.png" alt="axios" width="80" height="32" />
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/1024px-Socket-io.svg.png" alt="socket.io" width="30" height="30"/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="70" height="70"/>
-- Database: <br/> <img src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" alt="mongodb" width="40" height="40"/> <img src="https://media.licdn.com/dms/image/D4D12AQEk8opKsyHhRQ/article-cover_image-shrink_720_1280/0/1693917399837?e=2147483647&v=beta&t=6LPN-E9p8k_59NMv17edpwj8ofRzcXd_vlmlFoc1fLw" alt="mongoose" width="50" height="50"/><img src="https://www.svgrepo.com/show/353566/cloudinary.svg" alt="cloudinary" width="30" height="30"/>
-- Cloud Compuuting and Storage:<br/> <img src="https://user-images.githubusercontent.com/2277182/75613896-f24f5800-5b32-11ea-966e-4ed4b41f873a.png" alt="s3" width="30" height="30" /> <img src="https://cdn.worldvectorlogo.com/logos/aws-lambda-1.svg" alt="s3" width="30" height="30" /> 
-- AI and Procedural Generation:<br/> <img src="https://hackr.io/tutorials/learn-tensorflow/og_image" alt="tensorflow" width="30" height="30"/> <img src="https://github.com/user-attachments/assets/8d38bc2f-3843-4aba-828c-2642c28645a9" alt="google colab" width="40" height="40"/> <img src="https://github.com/user-attachments/assets/6836b091-3beb-4e1c-b4c2-76944cb07d8f" alt="scikit-learn" width="40" height="40"/> 
+- Backend:<br/> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="50" height="50"/>
+- Database: <br/> <img src="https://appwrite.io/assets/logomark/logo.png" alt="appwrite" width="35" height="30"/> 
+- AI and Procedural Generation:<br/> <img src="https://canada1.discourse-cdn.com/flex004/uploads/convai/original/2X/b/b288507c6abec0ab8369f8d0e15d465296a91e63.png" alt="convai" width="90" height="30"/> 
 - Authentication: <br/> <img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="clerk" width="30" height="30"/>
-- Deployment: <br/> <img src="https://download.logo.wine/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.png" alt="vercel" width="40" height="30"/> <img src="https://cdn.freebiesupply.com/images/large/2x/steam-logo-transparent.png" alt="vercel" width="30" height="30"/> <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" alt="vercel" width="40" height="40"/>
+- Deployment: <br/> <img src="https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/revision/latest?cb=20221026155821" alt="vercel" width="40" height="40"/> 
 
 ## 💸 Business Model
 - <b>Collaborations and Partnerships:</b> Partner with science and tech exhibitions, planetariums, and space-related events to feature AntarikXplorer as an interactive exhibit. Offer immersive booths with upsells to premium content and exclusive event challenges.
