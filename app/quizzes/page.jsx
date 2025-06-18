@@ -50,7 +50,7 @@ const Page = () => {
         />
         <div className="relative z-10 flex flex-row items-center justify-between min-h-dvh px-12 text-white pt-20">
           {/* Left column */}
-          <div className="w-2/5">
+          <div className="w-2/5 flex flex-col items-center">
             <h1
               className="text-4xl mb-4 viga-regular"
               style={{ textShadow: "4px 4px 10px rgba(0, 0, 0, 0.7)" }}
@@ -99,7 +99,7 @@ const Page = () => {
           </div>
 
           {/* Right column */}
-          <div className="w-2/5">
+          <div className="w-2/5 flex flex-col items-center">
             <h1
               className="text-4xl mb-4 viga-regular"
               style={{ textShadow: "4px 4px 10px rgba(0, 0, 0, 0.7)" }}
