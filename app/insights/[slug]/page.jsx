@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Client, Databases, Query } from "appwrite";
 import Header from "@/app/components/global/header";
+import Footer from "@/app/components/global/footer";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import Image from "next/image";
 
@@ -131,6 +132,8 @@ const BlogDetail = ({ params: { slug } }) => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
