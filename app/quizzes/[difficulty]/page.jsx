@@ -63,7 +63,10 @@ const Page = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white flex flex-col">
+    <div
+      className="min-h-screen text-white flex flex-col bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/landing-page-assets/quiz_page.jpg')" }} 
+    >
       <Header
         logo={
           <Image
@@ -82,7 +85,7 @@ const Page = () => {
         }
       />
 
-      <div className="flex flex-1 justify-center items-center px-4 bg-black bg-opacity-90">
+      <div className="flex flex-1 justify-center items-center px-4">
         <div className="bg-neutral-800 text-white p-10 rounded-xl shadow-lg max-w-xl w-full">
           {loading ? (
             <p className="text-center">🔄 Loading Questions...</p>
@@ -121,7 +124,9 @@ const Page = () => {
           ) : quizComplete ? (
             <div className="text-center">
               <h2 className="text-2xl mb-4">🎉 Quiz Complete!</h2>
-              <p className="text-lg mb-6">Your Score: {score} / {questions.length}</p>
+              <p className="text-lg mb-6">
+                Your Score: {score} / {questions.length}
+              </p>
               <Button onClick={() => window.location.href = "/quizzes"}>
                 Back to Quiz Menu
               </Button>
