@@ -82,7 +82,8 @@ const BlogDetail = ({ params: { slug } }) => {
         }}
       >
         {/* Add a semi-transparent overlay to improve text readability */}
-        <div className="bg-black bg-opacity-60 w-full h-full">
+        <div>
+          {/* className="bg-black bg-opacity-60 w-full h-full"> */}
           <div className="container mx-auto py-12 px-40">
             {/* Blog Title */}
             <h1 className="text-5xl font-bold leading-tight text-white mb-4 text-center">
