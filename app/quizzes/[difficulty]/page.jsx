@@ -88,7 +88,7 @@ const Page = () => {
       <div className="flex flex-1 flex-col items-center justify-center px-4 mt-16">
         <div className="bg-black bg-opacity-60 text-white p-10 rounded-xl shadow-lg max-w-xl w-full">
           {loading ? (
-            <p className="text-center">🔄 Loading Questions...</p>
+            <p className="text-center">Loading Questions...</p>
           ) : questions.length > 0 && !quizComplete ? (
             <>
               <h2 className="text-xl mb-6">
