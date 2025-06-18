@@ -65,7 +65,7 @@ const Page = () => {
   return (
     <div
       className="min-h-screen text-white flex flex-col bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/landing-page-assets/quiz_page.jpg')" }} 
+      style={{ backgroundImage: "url('/landing-page-assets/quiz_page.jpg')" }}
     >
       <Header
         logo={
@@ -85,7 +85,7 @@ const Page = () => {
         }
       />
 
-      <div className="flex flex-1 justify-center items-center px-4">
+      <div className="flex flex-1 flex-col items-center justify-center px-4 mt-16">
         <div className="bg-black bg-opacity-60 text-white p-10 rounded-xl shadow-lg max-w-xl w-full">
           {loading ? (
             <p className="text-center">🔄 Loading Questions...</p>
@@ -118,10 +118,9 @@ const Page = () => {
               {selected && (
                 <div className="flex justify-center">
                   <Button className="mt-6 w-40" onClick={handleNext}>
-                  {currentIndex === questions.length - 1 ? "Finish Quiz" : "Next"}
-                </Button>
+                    {currentIndex === questions.length - 1 ? "Finish Quiz" : "Next"}
+                  </Button>
                 </div>
-                
               )}
             </>
           ) : quizComplete ? (
@@ -143,6 +142,13 @@ const Page = () => {
             </div>
           )}
         </div>
+
+        {/* Live Score Display Below Quiz */}
+        {!loading && !quizComplete && (
+          <div className="mt-6 text-lg  text-white bg-black bg-opacity-50 py-2 px-6 rounded-lg shadow">
+            Your Score: {score} / {questions.length}
+          </div>
+        )}
       </div>
 
       <Footer />
