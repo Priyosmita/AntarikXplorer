@@ -47,10 +47,10 @@ const CallToAction = () => {
           className="text-base max-w-md mb-8 font-light opacity-80"
           style={{ textShadow: "2px 2px 8px rgba(0, 0, 0, 0.5)" }}
         >
-          Embark on Antarikxplorer’s VR and Gyro immersive experience and
-          explore distant exoplanets from the comfort of your space. Soar
+          Embark on Antarikxplorer’s immersive experience and
+          explore distant worlds from the comfort of your space. Soar
           through alien worlds, navigate star systems, and interact with
-          real-time NASA data. Your cosmic adventure awaits—are you ready to
+          real-time space data. Your cosmic adventure awaits—are you ready to
           explore?
         </p>
 
