@@ -78,7 +78,7 @@ const BlogDetail = ({ params: { slug } }) => {
         className="w-full min-h-screen bg-cover bg-center bg-no-repeat pt-10"
         style={{
           backgroundImage:
-            "url('https://w0.peakpx.com/wallpaper/164/343/HD-wallpaper-sci-fi-black-hole-kurzgesagt-minimalist.jpg')",
+            "url('https://wallpapercave.com/wp/wp9078263.jpg')",
         }}
       >
         {/* Add a semi-transparent overlay to improve text readability */}
