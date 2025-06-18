@@ -86,7 +86,7 @@ const Page = () => {
       />
 
       <div className="flex flex-1 justify-center items-center px-4">
-        <div className="bg-neutral-800 text-white p-10 rounded-xl shadow-lg max-w-xl w-full">
+        <div className="bg-black bg-opacity-60 text-white p-10 rounded-xl shadow-lg max-w-xl w-full">
           {loading ? (
             <p className="text-center">🔄 Loading Questions...</p>
           ) : questions.length > 0 && !quizComplete ? (
@@ -99,14 +99,14 @@ const Page = () => {
                   <button
                     key={idx}
                     onClick={() => handleOptionClick(option)}
-                    className={`w-full p-3 rounded-lg border transition-all duration-300
+                    className={`w-full p-3 rounded-full border transition-all duration-300 bg-opacity-65
                       ${
                         selected === null
                           ? "bg-gray-700 hover:bg-indigo-600"
                           : option === questions[currentIndex].correctAnswer
-                          ? "bg-green-600"
+                          ? "bg-[#1fb043]"
                           : option === selected
-                          ? "bg-red-600"
+                          ? "bg-[#cd2525]"
                           : "bg-gray-600 opacity-50"
                       }`}
                     disabled={selected !== null}
@@ -116,9 +116,12 @@ const Page = () => {
                 ))}
               </div>
               {selected && (
-                <Button className="mt-6 w-full" onClick={handleNext}>
+                <div className="flex justify-center">
+                  <Button className="mt-6 w-40" onClick={handleNext}>
                   {currentIndex === questions.length - 1 ? "Finish Quiz" : "Next"}
                 </Button>
+                </div>
+                
               )}
             </>
           ) : quizComplete ? (
