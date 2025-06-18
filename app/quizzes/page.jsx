@@ -58,7 +58,7 @@ const Page = () => {
               Challenge your knowledge
             </h1>
             <p
-              className="text-xl font-medium mb-6 opacity-85 w-3/4 mx-auto"
+              className="text-xl font-medium mb-6 opacity-85 w-3/4 mx-auto text-center"
               style={{ textShadow: "3px 3px 10px rgba(0, 0, 0, 0.6)" }}
             >
               Test your space science skills with adaptive quizzes that grow with your expertise.
@@ -107,7 +107,7 @@ const Page = () => {
               Unlock Rewards
             </h1>
             <p
-              className="text-xl font-medium mb-6 opacity-85 w-3/4 mx-auto"
+              className="text-xl font-medium mb-6 opacity-85 w-3/4 mx-auto text-center"
               style={{ textShadow: "3px 3px 10px rgba(0, 0, 0, 0.6)" }}
             >
               Earn points to redeem for exclusive upgrades and real-world prizes as you advance.
